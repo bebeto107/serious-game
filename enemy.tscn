@@ -49,10 +49,25 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d0u6y"]
-radius = 1.4142135
+radius = 0.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1258576642]
+[node name="shield_enemy" type="CharacterBody2D" unique_id=1258576642]
 script = ExtResource("1_4gyqm")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=393247845]
+emitting = false
+amount = 520
+lifetime = 1.82
+one_shot = true
+explosiveness = 0.97
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 163.69
+damping_min = 94.048
+damping_max = 94.048
+color = Color(0.45882353, 0.14117648, 0.21960784, 1)
 
 [node name="damage" type="Area2D" parent="." unique_id=739344828]
 position = Vector2(0, -1)
@@ -79,5 +94,6 @@ animation = &"dark"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665043040]
 shape = SubResource("CircleShape2D_d0u6y")
 
+[connection signal="area_entered" from="damage" to="." method="_on_damage_area_entered"]
 [connection signal="body_entered" from="damage/detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="damage/detection" to="." method="_on_detection_body_exited"]
