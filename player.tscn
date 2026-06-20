@@ -35,13 +35,9 @@ sprite_frames = SubResource("SpriteFrames_yf5fn")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=408178363]
 zoom = Vector2(5, 5)
 process_callback = 0
-limit_enabled = false
 position_smoothing_enabled = true
-rotation_smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=613354549]
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1576753229]
 position = Vector2(0, -6)
