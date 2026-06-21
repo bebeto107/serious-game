@@ -30,5 +30,7 @@ func _on_rush_timeout() -> void:
 
 
 func _on_damage_body_entered(body: Node2D) -> void:
+	#a minha ideia é subtrair a vida da qui só que ele n tá indetificando o body do player
+	
 	player_hp -= 1
 	print("alguma porra")
